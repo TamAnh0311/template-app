@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --app-cream: 250 248 245;
+    --app-card: 255 255 255;
+    --app-text: 32 30 26;
+    --app-text-secondary: 107 99 90;
+    --app-text-muted: 160 152 144;
+    --app-accent: 59 130 246;
+    --app-accent-soft: 239 246 255;
+    --app-border: 229 231 235;
+  }
+
+  html {
+    @apply h-full;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply h-full;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgb(var(--app-border));
+    border-radius: 999px;
+  }
+}
+
+@layer utilities {
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      rgb(var(--app-border) / 0.3) 0%,
+      rgb(var(--app-border) / 0.6) 50%,
+      rgb(var(--app-border) / 0.3) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s ease-in-out infinite;
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: 200% 0;
+    }
+    100% {
+      background-position: -200% 0;
+    }
+  }
+}
